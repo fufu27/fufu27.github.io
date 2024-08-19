@@ -264,12 +264,12 @@ defaults:
   # _resources
   - scope:
       path: ""
-      type: resources
+      type: resources  # Ensure this is the correct type
     values:
-  layout: single
-  author_profile: true
-  share: true
-  comments: true
+      layout: single
+      author_profile: true
+      share: true
+      comments: true
   # _portfolio
   - scope:
       path: ""
