@@ -1,0 +1,33 @@
+---
+layout: archive
+title: "Resources"
+permalink: /resources/
+author_profile: true
+---
+
+{% if site.author.googlescholar %}
+  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
+{% endif %}
+
+{% include base_path %}
+
+<!-- New style rendering if resource categories are defined -->
+{% if site.resource_category %}
+  {% for category in site.resource_category %}
+    {% assign title_shown = false %}
+    {% for resource in site.resources reversed %}
+      {% if resource.category != category[0] %}
+        {% continue %}
+      {% endif %}
+      {% unless title_shown %}
+        <h2>{{ category[1].title }}</h2><hr />
+        {% assign title_shown = true %}
+      {% endunless %}
+      {% include archive-single.html %}
+    {% endfor %}
+  {% endfor %}
+{% else %}
+  {% for resource in site.resources reversed %}
+    {% include archive-single.html %}
+  {% endfor %}
+{% endif %}
