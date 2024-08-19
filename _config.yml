@@ -262,9 +262,11 @@ defaults:
       share: true
       comments: true
   # _resources
+  - scope:
+      path: ""
+      type: resources
+    values:
   layout: single
-  title: "Resources"
-  permalink: /resources/
   author_profile: true
   share: true
   comments: true
